@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Rota</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+    <source src="img/vigilante.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo.
+</video>
+    <div class="container">
+        <div id="login-screen">
+            <h2>Monitoramento de Rota</h2>
+            <label for="phone-number">Número de Celular:</label>
+            <input type="text" id="phone-number" placeholder="Digite seu número de celular">
+            <button id="start-monitoring-btn">Iniciar Monitoramento</button>
+        </div>
+        <div id="route-screen" class="hidden">
+            <h2>Rota em Andamento</h2>
+            <p>Seu percurso está sendo monitorado e enviado para o número: <span id="phone-number-display"></span></p>
+            <div id="map"></div>
+            <button id="panic-btn">Botão de Pânico (190)</button>
+            <button id="end-monitoring-btn">Finalizar Monitoramento</button>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="script.js"></script>
+</body>
+</html>
