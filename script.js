@@ -21,7 +21,8 @@ document.getElementById('panic-btn').addEventListener('click', function() {
 document.getElementById('end-monitoring-btn').addEventListener('click', function() {
     stopMonitoring();
     alert('Monitoramento finalizado!');
-    location.reload(); // Reinicia a aplicação
+    document.getElementById('route-screen').classList.add('hidden');
+    document.getElementById('login-screen').classList.remove('hidden');
 });
 
 function startMonitoring() {
@@ -38,7 +39,9 @@ function startMonitoring() {
 }
 
 function stopMonitoring() {
-    navigator.geolocation.clearWatch(watchID);
+    if (watchID) {
+        navigator.geolocation.clearWatch(watchID);
+    }
 }
 
 function initMap(position) {
